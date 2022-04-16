@@ -3,7 +3,7 @@ module.exports = {
   mode: 'production',
   plugins: [
     new ESLintWebpackPlugin({
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     })
   ],
   module: {
