@@ -1,5 +1,9 @@
 import {a} from './a' // 直接引入
+import {JsxDemo} from "./jsx-demo.jsx";
+
 const b = import('./b') // 动态引入，也按需加载
+
+console.log(JsxDemo)
 
 const hi = () => {
   console.log('frank')
