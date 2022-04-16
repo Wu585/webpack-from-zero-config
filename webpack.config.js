@@ -1,6 +1,7 @@
 const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -10,7 +11,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename:'[name].[contenthash].css'
-    })
+    }),
+    new HtmlWebpackPlugin()
   ],
   output: {
     filename: "[name].[contenthash].js"
