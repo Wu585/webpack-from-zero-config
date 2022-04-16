@@ -17,6 +17,9 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js"
   },
+  optimization: {
+    runtimeChunk: 'single'
+  },
   resolve: {
     alias: {
       '@': path.join(__dirname, 'src/')
