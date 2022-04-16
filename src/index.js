@@ -5,7 +5,9 @@ import {TsxDemo} from "./tsx-demo.tsx";
 import {abc} from "@/dir1/x";
 import {yyy} from "@/dir1/yyy.ts";
 import '@/scss-demo.scss'
+import vars from '@/scss-export.scss'
 
+console.log(vars);
 const b = import('./b') // 动态引入，也按需加载
 console.log(abc);
 console.log(x)
