@@ -5,14 +5,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
+  entry: {
+    main: '@/index.js',
+    admin: '@/admin.js',
+  },
   plugins: [
     new ESLintWebpackPlugin({
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
     new MiniCssExtractPlugin({
-      filename:'[name].[contenthash].css'
+      filename: '[name].[contenthash].css'
     }),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: "admin.html",
+      chunks: ['admin']
+    })
   ],
   output: {
     filename: "[name].[contenthash].js"
@@ -52,7 +63,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader:'css-loader',
+            loader: 'css-loader',
             options: {
               modules: {
                 compileType: 'icss'
